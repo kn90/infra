@@ -1,22 +1,6 @@
 name: Windows OpenSSL
 on:
-  schedule:
-    # Run once a week on Fridays
-    - cron: "0 0 * * FRI"
-  pull_request:
-    paths:
-      - '.github/workflows/build-windows-openssl.yml'
-      - 'windows/openssl/**'
-      # Contains the OpenSSL version we'll build
-      - 'cryptography-linux/openssl-version.sh'
-  push:
-    branches:
-      - main
-    paths:
-      - '.github/workflows/build-windows-openssl.yml'
-      - 'windows/openssl/**'
-      # Contains the OpenSSL version we'll build
-      - 'cryptography-linux/openssl-version.sh'
+  workflow_dispatch
 
 jobs:
   build:
